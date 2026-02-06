@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
