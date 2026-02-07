@@ -1,4 +1,4 @@
-name: Deploy static content to Pages
+name: Deploy Final Lovable
 
 on:
   push:
@@ -12,10 +12,10 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true # Mudei para true para cancelar processos antigos encravados
 
 jobs:
-  build_site:
+  build_and_deploy: # Juntei tudo num só bloco para evitar conflitos de ficheiros
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,18 +33,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload Artifacts
+      - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # O ponto e a barra garantem o caminho relativo à raiz
+          path: ./dist
 
-  deploy:
-    needs: build_site
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
