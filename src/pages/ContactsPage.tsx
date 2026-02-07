@@ -42,11 +42,12 @@ const ContactsPage = () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
-      title: "Mensagem enviada!",
-      description: "Obrigado pelo seu contacto. Responderemos brevemente.",
+      title: "Serviço temporariamente indisponível",
+      description:
+        "O envio de mensagens está temporariamente indisponível. Por favor contacte-nos diretamente por telefone ou email.",
+      variant: "destructive",
     });
 
-    setForm({ name: "", email: "", subject: "", message: "" });
     setIsSubmitting(false);
   };
 
@@ -115,7 +116,7 @@ const ContactsPage = () => {
                 <div className="overflow-hidden rounded-lg border border-border">
                   <iframe
                     title="Localização Ângelo Araújo"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001.5!2d-8.48!3d41.25!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDE1JzAwLjAiTiA4wrAyOCc0OC4wIlc!5e0!3m2!1spt-PT!2spt!4v1700000000000"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2997.0!2d-8.4815!3d41.2685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zRXN0cmFkYSBkZSBTb2JyYWRlbG8gMTAxLCDDgWd1YSBMb25nYQ!5e0!3m2!1spt-PT!2spt!4v1700000000000!5m2!1spt-PT!2spt&q=Rua+de+Sobradelo+101,+%C3%81gua+Longa,+4825-118+Santo+Tirso,+Portugal"
                     width="100%"
                     height="300"
                     style={{ border: 0 }}
