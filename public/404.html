@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
-    <title>Ângelo Reborn</title>
+    <title>Ângelo Araújo</title>
     <script type="text/javascript">
-        // Redireciona para a index.html mantendo a rota no URL
-        var segmentCount = 0; // Número de segmentos no caminho (angelo-reborn = 1)
-        var l = window.location;
-        l.replace(
-            l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-            l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
-            l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
-            (l.search ? '&' + l.search.replace(/&/g, '~and~') : '') +
-            l.hash
-        );
+      // 0 significa que o site está na raiz do domínio (www.angeloaraujo.pt)
+      var pathSegmentsToKeep = 0;
+
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=/' +
+        l.pathname.split('/').slice(1 + pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
     </script>
-</head>
-<body>
-</body>
+  </head>
+  <body>
+  </body>
 </html>
