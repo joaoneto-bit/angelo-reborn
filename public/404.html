@@ -1,24 +1,22 @@
-<!doctype html>
-<html lang="pt">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.png" type="image/png" />
-    <title>Ângelo Araújo | Torno em Madeira e Ferragens</title>
-    <meta name="description" content="Soluções inovadoras de torno em madeira e ferragens. Cabos, pellets e artesanato em Santo Tirso, Portugal." />
-    <meta name="author" content="Ângelo Araújo" />
+    <meta charset="utf-8">
+    <title>Ângelo Reborn</title>
+    <script type="text/javascript">
+      // Truque para resolver Single Page Apps no GitHub Pages
+      var pathSegmentsToKeep = 1;
 
-    <meta property="og:title" content="Ângelo Araújo | Torno em Madeira e Ferragens" />
-    <meta property="og:description" content="Soluções inovadoras de torno em madeira e ferragens em Santo Tirso, Portugal." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
   </head>
-
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
