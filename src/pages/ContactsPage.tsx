@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import productsHero from "@/assets/products-hero.jpg";
 
 const ContactsPage = () => {
   const { toast } = useToast();
@@ -54,12 +55,20 @@ const ContactsPage = () => {
       <Header />
       <main>
         {/* Hero */}
-        <section className="pt-20 bg-secondary">
-          <div className="container mx-auto px-6 py-16 md:py-24">
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
+        <section className="pt-20 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src={productsHero}
+              alt="Pellets e aparas de madeira"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 hero-overlay" />
+          </div>
+          <div className="container mx-auto px-6 py-16 md:py-24 relative z-10">
+            <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-4 text-shadow-hero">
               Contactos
             </h1>
-            <p className="text-muted-foreground font-body text-lg max-w-2xl">
+            <p className="text-primary-foreground/90 font-body text-lg max-w-none text-shadow-hero">
               Entre em contacto connosco. Estamos disponíveis para responder a todas as suas questões.
             </p>
           </div>
