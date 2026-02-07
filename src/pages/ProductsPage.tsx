@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import cabosImage from "@/assets/product-cabos.jpg";
 import pelletsImage from "@/assets/product-pellets.jpg";
 import artesanatoImage from "@/assets/product-artesanato.jpg";
+import productsHero from "@/assets/products-hero.jpg";
 
 const productDetails = [
   {
@@ -51,12 +52,20 @@ const ProductsPage = () => {
       <Header />
       <main>
         {/* Hero banner */}
-        <section className="pt-20 bg-secondary">
-          <div className="container mx-auto px-6 py-16 md:py-24">
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
+        <section className="pt-20 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src={productsHero}
+              alt="Pellets e aparas de madeira"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 hero-overlay" />
+          </div>
+          <div className="container mx-auto px-6 py-16 md:py-24 relative z-10">
+            <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-4 text-shadow-hero">
               Os Nossos Produtos
             </h1>
-            <p className="text-muted-foreground font-body text-lg max-w-2xl">
+            <p className="text-primary-foreground/90 font-body text-lg max-w-none text-shadow-hero">
               Qualidade, tradição e sustentabilidade em cada peça que sai da nossa oficina em Santo Tirso.
             </p>
           </div>
